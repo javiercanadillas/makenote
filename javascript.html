@@ -1,0 +1,13 @@
+<script>
+function onSuccess(docURL) {
+  var div = document.getElementById('output');
+  div.innerHTML = "<a href='" + docURL + "'>New Note</a>";
+}
+function CreateNote() {
+  var customer = document.getElementById("customer").value;
+  var title = document.getElementById("title").value;
+  var date = document.getElementById("date").value;
+  google.script.run.withSuccessHandler(onSuccess)
+    .createDoc(customer, title, date);
+}
+</script>
